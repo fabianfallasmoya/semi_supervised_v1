@@ -60,21 +60,25 @@ CUDA_VISIBLE_DEVICES=1 python train_retinanet.py 				\\
 			--num_classes $NUM_CLASSES 				\\
 			--eval_period $EVAL_PERIOD				\\
 ```
+This example is already working with a dataset contained in the shared folder.
 
-## License
+## Test
 
-Detectron2 is released under the [Apache 2.0 license](LICENSE).
+Similar to training, the testing code is contained in the file train_retinanet.py. Here is the train.sh file that sends the parameters:
 
-## Citing Detectron2
-
-If you use Detectron2 in your research or wish to refer to the baseline results published in the [Model Zoo](MODEL_ZOO.md), please use the following BibTeX entry.
-
-```BibTeX
-@misc{wu2019detectron2,
-  author =       {Yuxin Wu and Alexander Kirillov and Francisco Massa and
-                  Wan-Yen Lo and Ross Girshick},
-  title =        {Detectron2},
-  howpublished = {\url{https://github.com/facebookresearch/detectron2}},
-  year =         {2019}
-}
 ```
+DS_TEST="voc2007_test"
+DS_TEST_JSON="../../../../share/semi_supervised/VOC2007_car_80_20/annotations/val.json"
+DS_TEST_IMGS="../../../../share/semi_supervised/VOC2007_Original/VOC_trainval/VOCdevkit/VOC2007/JPEGImages"
+
+YAML_CONFIG_FILE="COCO-Detection/retinanet_R_50_FPN_1x.yaml"
+WEIGHTS="output/car_2080/model_0004999.pth"
+
+OUT_FOLDER_VAL="output/car_test_2080"
+NUM_CLASSES="1"
+EVAL_PERIOD="100"
+
+CUDA_VISIBLE_DEVICES=2 python test_retinanet.py --ds_test $DS_TEST  --ds_test_json $DS_TEST_JSON  --ds_test_imgs $DS_TEST_IMGS --yaml_config_file $YAML_CONFIG_FILE --weights $WEIGHTS --out_folder_val $OUT_FOLDER_VAL --num_classes $NUM_CLASSES
+```
+
+
