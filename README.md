@@ -1,4 +1,6 @@
-Semi-Supervised Learning Research using [Detectron](https://github.com/facebookresearch/detectron2)
+Semi-Supervised Learning Research using [Detectron](https://github.com/facebookresearch/detectron2).
+
+The main code is contained in the folder **uvu**.
 
 
 ## Installation
