@@ -1,17 +1,8 @@
-<img src=".github/Detectron2-Logo-Horz.svg" width="300" >
+Semi-Supervised Learning Research using [Detectron](https://github.com/facebookresearch/detectron2)
 
-Detectron2 is Facebook AI Research's next generation library
-that provides state-of-the-art detection and segmentation algorithms.
-It is the successor of
-[Detectron](https://github.com/facebookresearch/Detectron/)
-and [maskrcnn-benchmark](https://github.com/facebookresearch/maskrcnn-benchmark/).
-It supports a number of computer vision research projects and production applications in Facebook.
 
-<div align="center">
-  <img src="https://user-images.githubusercontent.com/1381301/66535560-d3422200-eace-11e9-9123-5535d469db19.png"/>
-</div>
 
-### What's New
+### 
 * Includes new capabilities such as panoptic segmentation, Densepose, Cascade R-CNN, rotated bounding boxes, PointRend,
   DeepLab, etc.
 * Used as a library to support building [research projects](projects/) on top of it.
@@ -23,7 +14,26 @@ to see more demos and learn about detectron2.
 
 ## Installation
 
-See [installation instructions](https://detectron2.readthedocs.io/tutorials/install.html).
+1. Create an environment python >3.6
+
+2. Install pytorch. Using pip, and cuda 11.1. See https://pytorch.org/
+	
+3. Install newer gcc compiler (reference: https://seanlaw.github.io/2019/01/17/pip-installing-wheels-with-conda-gcc/). Commands:
+  * conda install gcc_linux-64
+	* conda install gxx_linux-64
+
+  After installation of gcc, just to make sure everything is correct, run the commands: 
+	* echo $CC (You should see the output: /home/builder/anaconda3/envs/cc_env/bin/x86_64-conda_cos6-linux-gnu-cc).
+	* echo $CPP (/home/builder/anaconda3/envs/cc_env/bin/x86_64-conda_cos6-linux-gnu-cpp).
+
+4. Install detectron. Commands:
+  * git clone https://github.com/facebookresearch/detectron2.git
+	* python -m pip install -e detectron2
+
+4. Install OpenCV. Command:
+  * pip install opencv-python
+
+
 
 ## Getting Started
 
