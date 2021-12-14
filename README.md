@@ -24,18 +24,32 @@ Semi-Supervised Learning Research using [Detectron](https://github.com/facebookr
 
 
 
-## Getting Started
+## TODO: HOW TO GENERATE DATASETS
 
-See [Getting Started with Detectron2](https://detectron2.readthedocs.io/tutorials/getting_started.html),
-and the [Colab Notebook](https://colab.research.google.com/drive/16jcaJoc6bCFAQ96jDe2HwtXj7BMD_-m5)
-to learn about basic usage.
+Details on how to generate datasets.
 
-Learn more at our [documentation](https://detectron2.readthedocs.org).
-And see [projects/](projects/) for some projects that are built on top of detectron2.
+## Train
 
-## Model Zoo and Baselines
+For training you can run train_retinanet.py. There are a lot of parameters that have to be sent in order to train. To keep things easy there is a .sh file that has an example on how to train a model. This is the content of train.sh
 
-We provide a large set of baseline results and trained models available for download in the [Detectron2 Model Zoo](MODEL_ZOO.md).
+```
+DS_TRAIN="voc2007_train"
+DS_TRAIN_JSON="../../../../share/semi_supervised/VOC2007_car_80_20/annotations/train.json"
+DS_TRAIN_IMGS="../../../../share/semi_supervised/VOC2007_Original/VOC_trainval/VOCdevkit/VOC2007/JPEGImages"
+
+DS_VAL="voc2007_val"
+DS_VAL_JSON="../../../../share/semi_supervised/VOC2007_car_80_20/annotations/val.json"
+DS_VAL_IMGS="../../../../share/semi_supervised/VOC2007_Original/VOC_trainval/VOCdevkit/VOC2007/JPEGImages"
+
+OUT_FOLDER_VAL="output/car"
+YAML_CONFIG_FILE="COCO-Detection/retinanet_R_50_FPN_1x.yaml"
+WEIGHTS="COCO-Detection/retinanet_R_50_FPN_1x.yaml"
+
+NUM_CLASSES="1"
+EVAL_PERIOD="100"
+
+CUDA_VISIBLE_DEVICES=1 python train_retinanet.py --ds_train $DS_TRAIN  --ds_train_json $DS_TRAIN_JSON  --ds_train_imgs $DS_TRAIN_IMGS --ds_val $DS_VAL  --ds_val_json $DS_VAL_JSON  --ds_val_imgs $DS_VAL_IMGS --out_folder_val $OUT_FOLDER_VAL --yaml_config_file $YAML_CONFIG_FILE --weights $WEIGHTS --num_classes $NUM_CLASSES --eval_period $EVAL_PERIOD
+```
 
 ## License
 
