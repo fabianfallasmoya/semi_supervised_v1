@@ -22,7 +22,7 @@ to see more demos and learn about detectron2.
   * conda install gcc_linux-64
 	* conda install gxx_linux-64
 
-  After installation of gcc, just to make sure everything is correct, run the commands: 
+	After installation of gcc, just to make sure everything is correct, run the commands: 
 	* echo $CC (You should see the output: /home/builder/anaconda3/envs/cc_env/bin/x86_64-conda_cos6-linux-gnu-cc).
 	* echo $CPP (/home/builder/anaconda3/envs/cc_env/bin/x86_64-conda_cos6-linux-gnu-cpp).
 
@@ -30,7 +30,7 @@ to see more demos and learn about detectron2.
   * git clone https://github.com/facebookresearch/detectron2.git
 	* python -m pip install -e detectron2
 
-4. Install OpenCV. Command:
+5. Install OpenCV. Command:
   * pip install opencv-python
 
 
