@@ -1,17 +1,6 @@
 Semi-Supervised Learning Research using [Detectron](https://github.com/facebookresearch/detectron2)
 
 
-
-### 
-* Includes new capabilities such as panoptic segmentation, Densepose, Cascade R-CNN, rotated bounding boxes, PointRend,
-  DeepLab, etc.
-* Used as a library to support building [research projects](projects/) on top of it.
-* Models can be exported to TorchScript format or Caffe2 format for deployment.
-* It [trains much faster](https://detectron2.readthedocs.io/notes/benchmarks.html).
-
-See our [blog post](https://ai.facebook.com/blog/-detectron2-a-pytorch-based-modular-object-detection-library-/)
-to see more demos and learn about detectron2.
-
 ## Installation
 
 1. Create an environment python >3.6
@@ -24,7 +13,7 @@ to see more demos and learn about detectron2.
 
 	After installation of gcc, just to make sure everything is correct, run the commands: 
 	* echo $CC (You should see the output: /home/builder/anaconda3/envs/cc_env/bin/x86_64-conda_cos6-linux-gnu-cc).
-	* echo $CPP (/home/builder/anaconda3/envs/cc_env/bin/x86_64-conda_cos6-linux-gnu-cpp).
+	* echo $CPP (You should see the output: /home/builder/anaconda3/envs/cc_env/bin/x86_64-conda_cos6-linux-gnu-cpp).
 
 4. Install detectron. Commands:
   * git clone https://github.com/facebookresearch/detectron2.git
